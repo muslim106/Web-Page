@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpage</title>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #00231C;
+    color: #fff;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+    margin-left: 40px;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+  
+  .nav-links li::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links li:hover::after {
+    background-color: yellow;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 40px;
+  }
+  
+  .search-box input {
+    padding: 5px;
+    background-color: transparent;
+    border: transparent;
+    color: #fff;
+    margin-right: 10px; 
+    margin-left: 20px;
+    outline: none;
+  }
+  
+  .search-box button {
+    font-size: 30px;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    color:#001E00 ;
+  }
+  
+  .cart-icon,
+  .menu-icon {
+    font-size: 30px;
+    margin-right: 0;
+    cursor: pointer;
+  } 
+
+
+  .cart-icon {
+    position: relative;
+    margin-right: 30px;
+  
+  }
+  
+  .cart-icon span {
+    position: absolute;
+     top: -6px;
+    right: -30px; 
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+  }
+
+  .container {
+    margin-top: 0;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .col {
+    flex: 1; 
+    
+  }
+  
+  .logo{
+    padding-left: 50px;
+    padding-top: 50px;
+    
+  }
+  .col:nth-child(1) {
+    background-color: #F2EFE6; 
+    
+  }
+  
+  .col:nth-child(2) {
+    background-color: #F1E2CB; 
+  }
+  
+  .col:nth-child(3) {
+    background-color: #019561; 
+   
+  }
+  
+  .img-fluid{
+    width: 100%;
+    height: auto;
+  }
+
+
+  .filter{
+    margin-top: 30px;
+    margin-left: 60px;
+    color: #019561;
+    font-size: 20px;
+  }
+
+  .filter span{
+    margin-left: 8px;
+
+  }
+
+  .heading{
+    position: relative;
+    margin-left: 60px;
+    margin-top: 40px;
+    color: #019561;
+  }
+
+  .hr1{
+    color: #019561;
+  }
+
+  .list{
+    display: flex;
+    margin-top: 15px; 
+    margin-left: 60px;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .font1{
+    color: orange;
+    font-size: 15px;
+    margin-bottom: -5px;
+  }
+
+  .font2{
+    margin-left: 30px;
+    font-size: 40px;
+    color: #019561;
+  }
+
+  .heading2{
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #019561;
+  }
+
+  .card {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 300px; 
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .card-img-top {
+    width: 80%; 
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+  
+  .card-body {
+    padding: 20px; 
+  }
+  
+  .card-title {
+    font-size: 15px;
+    margin-bottom: 5px; 
+  }
+  
+  .card-text {
+    font-size: 15px;
+  }
+
+  .card3 {
+    width: 500px; 
+    border: 1px solid #ccc;
+    overflow: hidden; 
+  }
+  
+  .card3-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card3-body {
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .card3-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .card3-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .card3-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-top: 20px;
+  }
+  
+  .sizes {
+    font-size: 14px;
+  }
+  
+  .col-3-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  </style>
+
+
+  <body>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Catalog</a></li>
+        <li><a href="#">Gender</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search" />
+        <button><i class="bx bx-search-alt-2"></i></button>
+      </div>
+
+      <div class="cart-icon">
+        <i class="bx bx-cart"></i>
+        <span>3</span>
+      </div>
+
+      <div class="menu-icon">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="logo">
+            <img src="logo-01.png" alt="">
+          </div>
+
+          <div class="filter">
+            <h2>
+              Filter <span><i class="bx bx-slider-alt"></i></span>
+            </h2>
+          </div>
+
+          <div class="shops-items">
+            <h1 class="heading">
+              Shop By
+              <hr class="hr1" />
+            </h1>
+
+            <div class="items-list">
+              <div class="list">
+                <i class="bx bxs-circle font1"></i>
+                <h1 class="heading2">Gender</h1>
+                <i class="bx bx-chevron-down-circle font2"></i>
+              </div>
+              <div class="list">
+                <i class="bx bxs-circle font1"></i>
+                <h1 class="heading2">Brands</h1>
+                <i class="bx bx-chevron-down-circle font2"></i>
+              </div>
+              <div class="list">
+                <i class="bx bxs-circle font1"></i>
+                <h1 class="heading2">Style</h1>
+                <i class="bx bx-chevron-down-circle font2"></i>
+              </div>
+              <div class="list">
+                <i class="bx bxs-circle font1"></i>
+                <h1 class="heading2">Price</h1>
+                <i class="bx bx-chevron-down-circle font2"></i>
+              </div>
+              <div class="list">
+                <i class="bx bxs-circle font1"></i>
+                <h1 class="heading2">Season</h1>
+                <i class="bx bx-chevron-down-circle font2"></i>
+              </div>
+              <div class="list">
+                <i class="bx bxs-circle font1"></i>
+                <h1 class="heading2">Sale</h1>
+                <i class="bx bx-chevron-down-circle font2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="photo1.png.jpg"
+              alt="Image"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Heading</h5>
+              <p class="card-text">Some text Here</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              src="photo1.png.jpg"
+              alt="Image"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Heading</h5>
+              <p class="card-text">Some text Here</p>
+            </div>
+          </div>
+      
+        </div>
+        <div class="col col-3-flex">
+          <div class="card3">
+            <img
+              src="coverphoto.jpg"
+              alt="Cover Image"
+              class="card-img img-fluid"
+            />
+            <div class="card3-body">
+              <h5 class="card-title">Product Name</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
+                eaque placeat ab voluptates voluptas, repellat delectus officia
+                laudantium dignissimos perferendis mollitia similique
+                repellendus alias pariatur eveniet repudiandae nam blanditiis,
+                fugiat minus nemo numquam. Eos nostrum dolorum ducimus eum
+                cupiditate officiis, dolores repellat tempore voluptatem minima
+                error quasi minus doloremque veniam eligendi incidunt eius
+                dolorem, sit in optio! Nesciunt deserunt fugit eveniet illo,
+                molestias eos sint explicabo? In ipsa, cupiditate unde nemo
+                provident consequatur doloremque fugiat. Voluptatem blanditiis,
+                facere perspiciatis id dolorem inventore maxime, commodi
+                delectus quaerat, labore laboriosam repellat magnam eligendi
+                optio temporibus facilis quibusdam beatae minima! Ut, ad
+                consequuntur?
+              </p>
+              <div class="card3-pricing">
+                <div class="price">$50</div>
+                <div class="sizes">Sizes: Small, Medium, Large</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
